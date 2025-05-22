@@ -5,10 +5,14 @@ body {
     background-color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     background-color: #333;
     color: white;
-    padding: 10%;
+    padding: 2vw;
     text-align: center;
 }
 
@@ -20,13 +24,13 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10%;
+    margin: 0 2vw;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 10%; 
+    font-size: 1.2rem; 
 }
 
 .cartikon {
@@ -35,18 +39,146 @@ nav ul li a {
 
 .produkt-sektion {
     text-align: center;
-    padding: 50xp 5%;
+    padding: 5vw 3vw;
 }
 
 .produkter {
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 3vw;
+    flex-wrap: wrap;
 }
 
 .produkt {
     background: white;
-    padding: 5%;
-    border-radius: 10px;
-    box-shadow: 0 0 5% rgba(0, 0, 0, 1);
+    padding: 3vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 1);
+    max-width: 300px;
+    margin: 2vw;
+}
+
+.produkt img {
+    width: 20vw;
+    max-width: 150px;
+    height: auto;
+}
+
+.produkt h3 {
+    margin: 1vw 0;
+}
+
+.pris {
+    font-weight: bold;
+    color: red;
+}
+
+button {
+    background: grey;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    cursor: pointer;
+    margin-top: 1vw;
+}
+
+button:hover {
+    background: #555;
+}
+
+.cart {
+    position: fixed;
+    overflow: scroll;
+    max-height: 100vh;
+    top: 7vh;
+    right: -25vw;
+    width: 20vw;
+    background: white;
+    padding: 2vw;
+    box-shadow:  -1vw 0 3vw rgba(0, 0, 0, 0.2);;
+    transition: right 0.5s;
+}
+
+.cart.open {
+    right: 2vw;
+}
+
+#OmOss {
+    max-width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5vw 3vw;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+#OmOss h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+#OmOss p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    margin-bottom: 1rem;
+}
+
+
+#KontaktaOss {
+    text-align: center;
+    right: 50%
+
+}
+
+footer {
+    background: grey;
+    color: white;
+    text-align: center;
+    padding: 2vw 0;
+    margin-top: 3vw;
+}
+
+@media (max-width: 768px) {
+    header, footer {
+        padding: 5vw;
+    }
+
+    nav ul li {
+        margin: 0 1vw;
+    }
+
+    .produkt img {
+        width: 50vw;
+    }
+
+    .cart {
+        width: 80vw;
+        right: -80vw;
+    }
+
+    .cart.open {
+        right: 2vw;
+    }
+
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        display: block;
+        margin: 1vw 0;
+    }
+
+    .produkt-sektion {
+        padding: 3vw;
+    }
+
+    .produkt img {
+        width: 70vw;
+    }
+
+    button {
+        padding: 2vw 4vw;
+    }
 }

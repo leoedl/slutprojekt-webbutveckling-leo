@@ -1,18 +1,18 @@
 let cart = []
 let totalPrice = 0;
 
-function addToCart(name, price){
-    cart.push({ name, price })
+function addToCart(name, price) {
+    cart.push({ name, price });
     totalPrice += price;
     updateCart();
 }
 
-function updateCart(){
-    const cartList = document.getElementById("cart-items");
-    const totalEl = document.getElementById("total-price")
-    const cartcount = document.getElementById("cart-count")
+function updateCart() {
+    const classList = document.getElementById("cart-items");
+    const totalEl = document.getElementById("total-price");
+    const cartCount = document.getElementById("cart-count");
 
-    cartList.innerHTML = "";
+    classList.innerHTML = "";
     cart.forEach((item, index) => {
         let li = document.createElement("li");
         li.textContent = `${item.name} - ${item.price} kr`;
@@ -20,27 +20,28 @@ function updateCart(){
         removeBtn.textContent = "❌";
         removeBtn.onclick = () => removeItem(index);
         li.appendChild(removeBtn);
-        cartList.appendChild(li);
+        classList.appendChild(li);
 
     })
+
     totalEl.textContent = totalPrice;
-    cartcount.textContent = cart.lenght;
+    cartCount.textContent = cart.length;
 }
 
-function removeItem(index){
+function removeItem(index) {
     totalPrice -= cart[index].price;
     cart.splice(index, 1);
     updateCart();
 }
 
 function toggleCart() {
-    document.getElementById("cart").cartList.toggle("open");
+    document.getElementById("cart").classList.toggle("open");
 }
 
 function checkout() {
     alert("Tack för ditt köp!");
     cart = [];
-    totalprice = 0;
+    totalPrice = 0;
     updateCart();
 
 }

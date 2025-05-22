@@ -43,5 +43,25 @@ function checkout() {
     cart = [];
     totalPrice = 0;
     updateCart();
-
 }
+
+const TillbakaButton = document.getElementById("tillbaka")
+
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+
+    if (scrollPercent > 0.12) {
+        TillbakaButton.style.display = "block";
+    } else {
+        TillbakaButton.style.display = "none";
+    }
+});
+
+TillbakaButton.addEventListener("click", () => {
+    window.scrollTo( {
+        top: 0,
+        behavior: "smooth"
+    });
+});
